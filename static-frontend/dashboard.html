@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel IFN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bienvenido al sistema IFN</h1>
+    <h2>Tu rol es: <span id="userRole">Cargando...</span></h2>
+
+    <div id="menuAdmin" class="menu" style="display: none;">
+        <h3>Menú Administrador</h3>
+        <ul>
+            <li><a href="#">Crear Brigada</a></li>
+            <li><a href="#">Asignar Miembros</a></li>
+            <li><a href="#">Crear Coordenadas</a></li>
+            <li><a href="#">Ver Departamento y Municipio</a></li>
+        </ul>
+    </div>
+
+    <div id="menuJefe" class="menu" style="display: none;">
+        <h3>Menú Jefe de Brigada</h3>
+        <ul>
+            <li><a href="#">Ver Coordenadas Asignadas</a></li>
+            <li><a href="#">Ver Miembros</a></li>
+        </ul>
+    </div>
+
+    <div id="menuTecnico" class="menu" style="display: none;">
+        <h3>Menú Técnico</h3>
+        <ul>
+            <li><a href="#">Registrar Datos Técnicos</a></li>
+        </ul>
+    </div>
+
+    <div id="menuBotanico" class="menu" style="display: none;">
+        <h3>Menú Botánico</h3>
+        <ul>
+            <li><a href="#">Identificar Especies</a></li>
+        </ul>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
