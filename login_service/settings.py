@@ -96,7 +96,15 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = 'static/'
+# Ruta donde estarán los archivos estáticos (CSS, JS, imágenes)
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static-frontend"),
+]
+
+# Para producción (cuando uses collectstatic)
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 CORS_ALLOW_ALL_ORIGINS = True
 APP_DIRS=True
