@@ -6,6 +6,24 @@ from django.contrib.auth import authenticate
 from rest_framework import status
 from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .models import User
+from rest_framework.permissions import AllowAny
+from rest_framework.decorators import permission_classes
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def lista_usuarios(request):
+    usuarios = User.objects.all()
+    data = [{
+        "id": u.id,
+        "username": u.username,
+        "role": u.role,
+        "first_name": u.first_name,
+        "last_name": u.last_name
+    } for u in usuarios]
+    return Response(data)
 
 
 User = get_user_model()
