@@ -1,46 +1,58 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Panel IFN</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Panel IFN</title>
+
+  <!-- Tailwind CSS vía CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS personalizado -->
+  <script src="{% static 'dashboard.js' %}" defer></script>
 </head>
-<body>
-    <h1>Bienvenido al sistema IFN</h1>
-    <h2>Tu rol es: <span id="userRole">Cargando...</span></h2>
+<body class="bg-gray-100 min-h-screen p-6">
 
-    <div id="menuAdmin" class="menu" style="display: none;">
-        <h3>Menú Administrador</h3>
-        <ul>
-            <li><a href="#">Crear Brigada</a></li>
-            <li><a href="#">Asignar Miembros</a></li>
-            <li><a href="#">Crear Coordenadas</a></li>
-            <li><a href="#">Ver Departamento y Municipio</a></li>
-        </ul>
+  <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
+    <h1 class="text-3xl font-bold text-green-700 mb-2 text-center">Bienvenido al sistema IFN</h1>
+    <h2 class="text-lg text-gray-700 text-center mb-6">Tu rol es: <span id="userRole" class="font-semibold text-blue-600">Cargando...</span></h2>
+
+    <!-- Menú Administrador -->
+    <div id="menuAdmin" class="menu hidden mb-6">
+      <h3 class="text-xl font-semibold text-green-800 mb-2">Menú Administrador</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="block px-4 py-2 bg-green-100 rounded hover:bg-green-200">Crear Brigada</a></li>
+        <li><a href="#" class="block px-4 py-2 bg-green-100 rounded hover:bg-green-200">Asignar Miembros</a></li>
+        <li><a href="#" class="block px-4 py-2 bg-green-100 rounded hover:bg-green-200">Crear Coordenadas</a></li>
+        <li><a href="#" class="block px-4 py-2 bg-green-100 rounded hover:bg-green-200">Ver Departamento y Municipio</a></li>
+      </ul>
     </div>
 
-    <div id="menuJefe" class="menu" style="display: none;">
-        <h3>Menú Jefe de Brigada</h3>
-        <ul>
-            <li><a href="#">Ver Coordenadas Asignadas</a></li>
-            <li><a href="#">Ver Miembros</a></li>
-        </ul>
+    <!-- Menú Jefe de Brigada -->
+    <div id="menuJefe" class="menu hidden mb-6">
+      <h3 class="text-xl font-semibold text-green-800 mb-2">Menú Jefe de Brigada</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="block px-4 py-2 bg-blue-100 rounded hover:bg-blue-200">Ver Coordenadas Asignadas</a></li>
+        <li><a href="#" class="block px-4 py-2 bg-blue-100 rounded hover:bg-blue-200">Ver Miembros</a></li>
+      </ul>
     </div>
 
-    <div id="menuTecnico" class="menu" style="display: none;">
-        <h3>Menú Técnico</h3>
-        <ul>
-            <li><a href="#">Registrar Datos Técnicos</a></li>
-        </ul>
+    <!-- Menú Técnico -->
+    <div id="menuTecnico" class="menu hidden mb-6">
+      <h3 class="text-xl font-semibold text-green-800 mb-2">Menú Técnico</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="block px-4 py-2 bg-yellow-100 rounded hover:bg-yellow-200">Registrar Datos Técnicos</a></li>
+      </ul>
     </div>
 
-    <div id="menuBotanico" class="menu" style="display: none;">
-        <h3>Menú Botánico</h3>
-        <ul>
-            <li><a href="#">Identificar Especies</a></li>
-        </ul>
+    <!-- Menú Botánico -->
+    <div id="menuBotanico" class="menu hidden">
+      <h3 class="text-xl font-semibold text-green-800 mb-2">Menú Botánico</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="block px-4 py-2 bg-purple-100 rounded hover:bg-purple-200">Identificar Especies</a></li>
+      </ul>
     </div>
+  </div>
 
-    <script src="dashboard.js"></script>
 </body>
 </html>
